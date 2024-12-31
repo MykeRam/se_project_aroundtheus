@@ -56,7 +56,7 @@
 }
 
 .profile__add-button {
-  background: transparent url(../images/add\ button.svg) center no-repeat;
+  background: transparent url(../images/add-button.svg) center no-repeat;
   width: 150px;
   height: 50px;
   margin-left: auto;
@@ -157,5 +157,7 @@ margin-top: 51px;
 
   .profile__add-button {
     margin: 0;
+    width: 100%;
   }
+
 }

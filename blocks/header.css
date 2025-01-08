@@ -11,6 +11,11 @@
   height: 33px;
 }
 
+.header__logo:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 636px) {
   .header__logo {
     padding-bottom: 32px;

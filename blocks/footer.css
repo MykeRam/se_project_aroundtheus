@@ -9,7 +9,7 @@
   font-size: 18px;
   font-weight: 400;
   color: #545454;
-  width: 318px;
+  max-width: 318px;
   line-height: 1.2;
   margin: 0;
 }

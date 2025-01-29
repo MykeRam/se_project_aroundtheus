@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   list-style: none;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
 }
 
 .card__image {
   max-width: 282px;
   min-height: 282px;
-  border-radius: 10px 10px 0 0;
   object-fit: cover;
 }
 

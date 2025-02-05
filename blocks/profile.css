@@ -90,6 +90,7 @@
     align-items: center;
     padding-top: 42px;
     max-width: 282px;
+    padding-bottom: 36px;
   }
 
   .profile__image {

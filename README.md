@@ -22,3 +22,6 @@ Good luck and have fun!
 
 Video on my project:
 https://drive.google.com/file/d/1gw28P6PjBcZf5-zdGcl0D_wNzC6D21xg/view?usp=sharing
+
+Github Pages: 
+https://mykeram.github.io/se_project_aroundtheus/

@@ -53,7 +53,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 880px;
+  max-width: 400px;
 }
 
 .profile__description {
@@ -65,7 +65,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 880px;
+  max-width: 400px;
 }
 
 .profile__image {

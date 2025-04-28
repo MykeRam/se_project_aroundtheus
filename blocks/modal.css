@@ -41,38 +41,38 @@
 .modal__form {
     display: flex;
     flex-direction: column;
+    gap: 30px;
   }
 
 .modal__heading {
-    width: 330px;
-  height: 23px;
-  font-family: "Inter";
+    max-width: 330px;
+  font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 900;
   color: #000;
   margin: 0;
+  margin-bottom: 54px;
 }
 
 .modal__input-title {
-    width: 358px;
+    
     height: 27.34px;
-    margin-top: 54px;
     border-right: none;
     border-left: none;
     border-top: none;
-    font-family: "Inter";
-    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    padding-bottom: 13px;
+    border-bottom: solid 1px rgba(84, 84, 84, 70%);
   }
 
 .modal__input-description {
-    width: 358px;
     height: 27.34px;
-    margin-top: 29.74px;
     border-right: none;
     border-left: none;
     border-top: none;
-    font-family: "Inter";
-    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    padding-bottom: 13px;
+    border-bottom: solid 1px rgba(84, 84, 84, 70%);
   }
   
   .modal__button {
@@ -81,8 +81,10 @@
     background-color: black;
     color: white;
     font-size: 18px;
-    font-family: "Inter";
-    margin-top: 48px;
+    font-family: "Inter", sans-serif;
+    margin-top: 25px;
+    line-height: 21.78px;
+    border: none;
   }
 
 
@@ -90,43 +92,37 @@
     .modal__container {
       box-sizing: border-box;
       width: 100%;
-      height: 322px;
-      padding-right: 22px;
-      padding-left: 22px;
+      padding: 22px;
     }
   
     .modal__close {
       width: 26px;
-      height: 26px;
-      flex-shrink: 0;
-      left: 264px;
-      margin-bottom: 13px;
-      padding: 0;
+        height: 26px;
+        left: unset;
+        right: 0;
+        bottom: calc(100% + 18px);
     }
   
     .modal__form {
-        display: flex;
         flex-direction: column;
       }
 
     .modal__heading {
-      width: 238px;
+      max-width: 238px;
       color: #000;
-      font-family: Inter;
+      font-family: "Inter", sans-serif;
       font-size: 18px;
       font-style: normal;
       font-weight: 900;
-      line-height: normal;
+      line-height: 18px;
     }
   
-    .modal__input-title {
-      width: 238px;
+    .modal__input_type_title {
       height: 14px;
       flex-shrink: 0;
     }
   
-    .modal__input-description {
-      width: 238px;
+    .modal__input_type_description {
       height: 14px;
       flex-shrink: 0;
     }
@@ -136,5 +132,7 @@
       height: 46px;
       flex-shrink: 0;
       width: 100%;
+      font-size: 14px;
+        line-height: 16.94px;
     }
   }

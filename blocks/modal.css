@@ -55,18 +55,8 @@
   margin-bottom: 54px;
 }
 
-.modal__input_type_name {
+.modal__input {
     
-    height: 27.34px;
-    border-right: none;
-    border-left: none;
-    border-top: none;
-    font-family: "Inter", sans-serif;
-    padding-bottom: 13px;
-    border-bottom: solid 1px rgba(84, 84, 84, 70%);
-  }
-
-.modal__input_type_description {
     height: 27.34px;
     border-right: none;
     border-left: none;
@@ -111,12 +101,7 @@
       line-height: 18px;
     }
 
-    .modal__input_type_name {
-      height: 14px;
-      flex-shrink: 0;
-    }
-  
-    .modal__input_type_description {
+    .modal__input {
       height: 14px;
       flex-shrink: 0;
     }

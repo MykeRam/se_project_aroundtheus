@@ -39,6 +39,10 @@
     background-size: contain;
 }
 
+.modal__close:hover {
+    opacity: 60%;
+}
+
 .modal__form {
     display: flex;
     flex-direction: column;

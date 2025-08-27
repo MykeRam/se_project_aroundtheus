@@ -41,6 +41,7 @@
       </footer>
     </div>
 
+<!-- Edit modal-->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button type="button" class="modal__close" id="modal__close-btn"></button>
@@ -48,6 +49,34 @@
         <form class="modal__form">
             <input type="text" name="title" class="modal__input modal__input_type_name" placeholder="Jacques Cousteau"/>
             <input type="text" name="description" class="modal__input modal__input_type_description" placeholder="Explorer"/>
+            <button type="submit" class="modal__button">Save</button>
+        </form>
+      </div>
+      </div>
+
+
+      <template id="card-template">
+      <li class="card">
+        <img
+          src=""
+          alt=""
+          class="card__image"
+        />
+        <div class="card__description">
+          <h3 class="card__title"></h3>
+          <button type="button" class="card__like-button"></button>
+        </div>
+      </li>
+    </template>
+
+    <!-- Add card modal-->
+<div class="modal" id="add-profile-form-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close" id="modal__close-btn"></button>
+        <h2 class="modal__heading">New Place</h2>
+        <form class="modal__form">
+            <input type="text" name="title" class="modal__input modal__input_type_title" placeholder="Title"/>
+            <input type="text" name="url" class="modal__input modal__input_type_url" placeholder="Image URL"/>
             <button type="submit" class="modal__button">Save</button>
         </form>
       </div>

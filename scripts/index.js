@@ -36,7 +36,6 @@ const profileEditForm = profileEditModal.querySelector('.modal__form');
 const addCardFormElement = addCardModal.querySelector('.modal__form');
 
 
-
 //Buttons and other DOM nodes
 const profileEditbtn = document.querySelector("#profile-edit-button");
 const profileModalCloseBtn = profileEditModal.querySelector('.modal__close');
@@ -44,6 +43,8 @@ const addCardModalCloseBtn = addCardModal.querySelector('.modal__close');
 const profileTitle = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
 const addNewCardButton = document.querySelector('.profile__add-button');
+
+
 
 //Form data
 const profileTitleInput = document.querySelector(".modal__input_type_name");
@@ -67,6 +68,12 @@ function getCardElement(cardData) {
 const cardElement = cardTemplate.cloneNode(true);
 const cardImageEl = cardElement.querySelector('.card__image');
 const cardTitleEl = cardElement.querySelector('.card__title');
+const likeButton = cardElement.querySelector('.card__like-button');
+
+likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle('card__like-button_active');
+    });
+
 
 cardTitleEl.textContent = cardData.name;
 cardImageEl.src = cardData.link;

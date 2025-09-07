@@ -7,6 +7,7 @@
   border-radius: 10px;
   overflow: hidden;
   font-family: "Inter", Arial, sans-serif;
+  position: relative;
 }
 
 .card__image {
@@ -53,5 +54,16 @@
 
 .card__like-button:hover {
   opacity: 0.5;
+  cursor: pointer;
+}
+
+.card__delete-button {
+  background: transparent url(../images/Trash.svg) center no-repeat;
+  width: 21px;
+  height: 18px;
+  border: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
 }

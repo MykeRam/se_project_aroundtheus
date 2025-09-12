@@ -1,5 +1,7 @@
 .cards {
   /*fonts */
+  flex-direction: column-reverse;
+  display: flex;
 }
 
 .cards__list {

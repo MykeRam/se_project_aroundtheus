@@ -16,6 +16,13 @@
   object-fit: cover;
 }
 
+.card__image_preview {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
 .card__description {
   display: flex;
   background-color: white;
@@ -50,6 +57,15 @@
 .card__like-button_active {
   background-image: url(../images/likebtn-active.svg);
 }
+
+.card__image-container {
+  position: relative;
+  width: 282px;
+  height: 282px;
+  cursor: pointer;
+}
+
+
 
 
 .card__like-button:hover {

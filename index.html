@@ -65,16 +65,37 @@
             <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
+  </div>
+
+
+
+
+
+<div class="modal" id="modal_type-preview">
+      <div class="modal__container modal__container_type_preview">
+        <button
+        type="button"
+          class="modal__close modal__close_preview"
+          id="card-close-modal"
+        ></button>
+        <img alt="" class="card__image_preview" src="" />
+        <p class="modal__caption"></p>
       </div>
+    </div>
+
+
+
 
       <template id="card-template">
       <li class="card">
+        <div class="card__image-container">
         <img
           src=""
           alt=""
           class="card__image"
         />
         <button type="button" class="card__delete-button"></button>
+        </div>
         <div class="card__description">
           <h3 class="card__title"></h3>
           <button type="button" class="card__like-button"></button>

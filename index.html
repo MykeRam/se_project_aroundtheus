@@ -44,11 +44,11 @@
     <!--edit modal-->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button type="button" class="modal__close" id="modal__close-btn"></button>
+        <button type="button" class="modal__close"></button>
         <h2 class="modal__heading">Edit Profile</h2>
         <form class="modal__form">
-            <input type="text" name="title" class="modal__input modal__input_type_name" placeholder="Jacques Cousteau"/>
-            <input type="text" name="description" class="modal__input modal__input_type_description" placeholder="Explorer"/>
+            <input type="text" name="title" class="modal__input modal__input_type_name" placeholder="Jacques Cousteau" required/>
+            <input type="text" name="description" class="modal__input modal__input_type_description" placeholder="Explorer" required/>
             <button type="submit" class="modal__button">Save</button>
         </form>
       </div>
@@ -57,11 +57,11 @@
       <!--add card modal-->
  <div class="modal" id="add-card-modal">
       <div class="modal__container">
-        <button type="button" class="modal__close" id="modal__close-btn"></button>
+        <button type="button" class="modal__close"></button>
         <h2 class="modal__heading">New Place</h2>
         <form class="modal__form" id="add-card-form">
-            <input type="text" name="title" class="modal__input modal__input_type_title" placeholder="Title"/>
-            <input type="text" name="url" class="modal__input modal__input_type_url" placeholder="Image URL"/>
+            <input type="text" name="title" class="modal__input modal__input_type_title" placeholder="Title" required/>
+            <input type="text" name="url" class="modal__input modal__input_type_url" placeholder="Image URL" required/>
             <button type="submit" class="modal__button">Save</button>
         </form>
       </div>

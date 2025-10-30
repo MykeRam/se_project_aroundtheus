@@ -136,13 +136,28 @@
 
   .modal__error {
     font-size: 12px;
-    line-height: 15px;
+    line-height: 100%;
     color: #ff0000;
     position: absolute;
-    top: calc(100% + 5px);
-    left: 0;
+    margin-top: 5px;
+    display: block;
     transition: opacity 0.3s;
   }
+
+ /* Input error state */
+.modal__input_type_error {
+  border-bottom: 2px solid #ff0000; /* red underline */
+}
+
+/* Error message text */
+.modal__error {
+  color: #ff0000; /* red text */
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 5px;
+  display: block;
+}
+
 
 
   @media screen and (max-width: 480px) {

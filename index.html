@@ -58,6 +58,7 @@
           required
           id="modal-title-input"
         />
+        <span class="modal__error" id="modal-title-input-error"></span>
       </label>
       <label class="modal__label">
         <input
@@ -70,6 +71,7 @@
           required
           id="modal-description-input"
         />
+        <span class="modal__error" id="modal-description-input-error"></span>
       </label>
       <button type="submit" class="modal__button modal__button_disabled" disabled>Save</button>
     </form>
@@ -78,17 +80,42 @@
 
 
       <!--add card modal-->
- <div class="modal" id="add-card-modal">
-      <div class="modal__container">
-        <button type="button" class="modal__close"></button>
-        <h2 class="modal__heading">New Place</h2>
-        <form class="modal__form" id="add-card-form">
-            <input type="text" name="title" class="modal__input modal__input_type_title" placeholder="Title" required/>
-            <input type="text" name="url" class="modal__input modal__input_type_url" placeholder="Image URL" required/>
-            <button type="submit" class="modal__button">Save</button>
-        </form>
-      </div>
+<div class="modal" id="add-card-modal">
+  <div class="modal__container">
+    <button type="button" class="modal__close"></button>
+    <h2 class="modal__heading">New Place</h2>
+    <form class="modal__form" id="add-card-form">
+      <label class="modal__label">
+  <input type="text" 
+         name="title" 
+         id="card-title-input"
+         class="modal__input modal__input_type_title" 
+         placeholder="Title" 
+         minlength="2"
+         maxlength="40"
+         required
+  />
+  <span class="modal__error" id="card-title-input-error"></span>
+</label>
+
+<label class="modal__label">
+  <input type="url" 
+         name="url" 
+         id="card-url-input"
+         class="modal__input modal__input_type_url" 
+         placeholder="Image URL" 
+         required
+  />
+  <span class="modal__error" id="card-url-input-error"></span>
+</label>
+
+        <button type="submit" class="modal__button modal__button_disabled" disabled>Save</button>
+      </label>
+      
+    </form>
   </div>
+</div>
+
 
 
 

@@ -129,6 +129,35 @@ function handleAddCardFormSubmit(e) {
   addCardFormElement.reset();
 }
 
+
+// --- Enable/disable submit button ---
+function toggleButtonState(formElement) {
+  const inputs = Array.from(formElement.querySelectorAll(".modal__input"));
+  const submitButton = formElement.querySelector(".modal__button");
+
+  function updateButton() {
+    if (inputs.every(input => input.checkValidity())) {
+      submitButton.disabled = false;
+      submitButton.classList.remove("modal__button_disabled");
+    } else {
+      submitButton.disabled = true;
+      submitButton.classList.add("modal__button_disabled");
+    }
+  }
+
+  inputs.forEach(input => input.addEventListener("input", updateButton));
+
+  // active button state on load
+  updateButton();
+}
+
+// Apply to both modals
+toggleButtonState(profileEditForm);
+toggleButtonState(addCardFormElement);
+
+
+
+
 /* Form listeners */
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleAddCardFormSubmit);

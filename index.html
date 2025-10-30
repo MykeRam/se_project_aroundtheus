@@ -41,36 +41,41 @@
       </footer>
     </div>
 
-    <!--edit modal-->
-    <div class="modal" id="profile-edit-modal">
-      <div class="modal__container">
-        <button type="button" class="modal__close"></button>
-        <h2 class="modal__heading">Edit Profile</h2>
-        <form class="modal__form">
-          <label class="modal__label">
-            <input type="text" 
-            name="title" 
-            class="modal__input modal__input_type_name" 
-            placeholder="Jacques Cousteau" 
-            minlength="2" 
-            maxlength="40" 
-            required
-            />
-            <span class="modal__error" id="modal-title-input-error"></span>
-            </label>
-            <label class="modal__label">
-            <input type="text" 
-            name="description" 
-            class="modal__input modal__input_type_description" 
-            placeholder="Explorer" 
-            required
-            />
-            <span class="modal__error" id="modal-description-input-error"></span>
-            </label>
-            <button type="submit" class="modal__button">Save</button>
-        </form>
-      </div>
-      </div>
+    <!-- Edit Profile Modal -->
+<div class="modal" id="profile-edit-modal">
+  <div class="modal__container">
+    <button type="button" class="modal__close"></button>
+    <h2 class="modal__heading">Edit Profile</h2>
+    <form class="modal__form">
+      <label class="modal__label">
+        <input
+          type="text"
+          name="title"
+          class="modal__input modal__input_type_name"
+          placeholder="Jacques Cousteau"
+          minlength="2"
+          maxlength="40"
+          required
+          id="modal-title-input"
+        />
+      </label>
+      <label class="modal__label">
+        <input
+          type="text"
+          name="description"
+          class="modal__input modal__input_type_description"
+          placeholder="Explorer"
+          minlength="2"
+          maxlength="200"
+          required
+          id="modal-description-input"
+        />
+      </label>
+      <button type="submit" class="modal__button modal__button_disabled" disabled>Save</button>
+    </form>
+  </div>
+</div>
+
 
       <!--add card modal-->
  <div class="modal" id="add-card-modal">

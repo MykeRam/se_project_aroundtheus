@@ -128,6 +128,12 @@
     opacity: 60%;
   }
 
+  .modal__button_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
   .modal__error {
     font-size: 12px;
     line-height: 15px;

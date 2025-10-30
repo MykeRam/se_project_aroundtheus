@@ -158,6 +158,15 @@
   display: block;
 }
 
+/* Disabled Save button style */
+.modal__button_disabled {
+  background-color: #f0f0f0; 
+  color: #b0b0b0;            
+  border: 1px solid #d0d0d0; 
+  cursor: default;            
+  opacity: 1;                 
+  pointer-events: none;       
+}
 
 
   @media screen and (max-width: 480px) {

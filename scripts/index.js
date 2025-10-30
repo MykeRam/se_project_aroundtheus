@@ -203,7 +203,7 @@ function validateCardInput(input) {
     return false;
   }
   if (input === cardUrlInput && !input.validity.valid) {
-    showError(input, "Please enter a valid URL");
+    showError(input, "Please enter a web address");
     return false;
   }
   hideError(input);

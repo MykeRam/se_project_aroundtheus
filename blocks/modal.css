@@ -40,7 +40,6 @@
   max-height: 90vh;
   width: auto;
   height: auto;
-  margin: auto;
   padding: 0;
   flex-wrap: nowrap;
 }
@@ -69,11 +68,11 @@
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: 1s;
 }
 
 .modal__close:hover {
-    opacity: 60%;
-    transition: 1s;
+    opacity: 0.6;
 }
 
 .modal__close_preview {
@@ -89,7 +88,7 @@
 
 .modal__heading {
     max-width: 330px;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", arial, sans-serif;
   font-size: 24px;
   font-weight: 900;
   color: #000;
@@ -103,7 +102,7 @@
     border-right: none;
     border-left: none;
     border-top: none;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", arial, sans-serif;
     padding-bottom: 10px;
     border-bottom: solid 1px rgb(0 0 0 / .2);
     display: block;
@@ -117,7 +116,7 @@
     background-color: black;
     color: white;
     font-size: 18px;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", arial, sans-serif;
     margin-top: 25px;
     line-height: 21.78px;
     border: none;
@@ -128,34 +127,23 @@
     opacity: 60%;
   }
 
-  .modal__button_disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+  
+
+
+ .modal__error {
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  margin-top: 5px;
+  display: block;
+  position: absolute; /* if needed */
+  transition: opacity 0.3s;
 }
 
-
-  .modal__error {
-    font-size: 12px;
-    line-height: 100%;
-    color: #ff0000;
-    position: absolute;
-    margin-top: 5px;
-    display: block;
-    transition: opacity 0.3s;
-  }
 
  /* Input error state */
 .modal__input_type_error {
   border-bottom: 2px solid #ff0000; /* red underline */
-}
-
-/* Error message text */
-.modal__error {
-  color: #ff0000; /* red text */
-  font-size: 12px;
-  line-height: 15px;
-  margin-top: 5px;
-  display: block;
 }
 
 /* Disabled Save button style */
@@ -196,7 +184,6 @@
     }
   
     .modal__button {
-      width: 238px;
       height: 46px;
       flex-shrink: 0;
       width: 100%;

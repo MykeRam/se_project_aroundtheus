@@ -147,3 +147,21 @@ profileModalCloseBtn.addEventListener("click", () =>
 // Add new card modal open/close
 addNewCardButton.addEventListener("click", () => openModal(addCardModal));
 addCardModalCloseBtn.addEventListener("click", () => closePopup(addCardModal));
+
+// Close modals by clicking on overlay or pressing Escape
+function setupModalCloseEvents(modal) {
+  // Close on overlay click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closePopup(modal);
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("modal_opened")) {
+      closePopup(modal);
+    }
+  });
+}
+
+// Apply to all modals
+[profileEditModal, addCardModal, previewModal].forEach(setupModalCloseEvents);

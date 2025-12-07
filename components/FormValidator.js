@@ -84,10 +84,9 @@ export default class FormValidator {
 
   // [optional] reset errors + button state (useful when opening a form)
   resetValidation() {
-    this._toggleButtonState();
-
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
+    this.disableSubmitButton();
   }
 }

@@ -146,6 +146,7 @@ profileEditForm.addEventListener("submit", (e) => {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
+  profileFormValidator.disableSubmitButton();
   closeModal(profileEditModal);
 });
 

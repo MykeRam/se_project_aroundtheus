@@ -53,6 +53,7 @@ This project demonstrates modular JavaScript, object-oriented programming, and r
 
 ## 📁 Project Structure
 
+```
 se_project_aroundtheus/
 │
 ├── components/
@@ -71,6 +72,7 @@ se_project_aroundtheus/
 ├── .gitignore
 ├── .prettierignore
 └── README.md
+```
 
 ---
 
@@ -88,5 +90,9 @@ https://drive.google.com/file/d/1gw28P6PjBcZf5-zdGcl0D_wNzC6D21xg/view?usp=shari
 
 ## ✨ Figma Design Reference
 
-Original Sprint 3 layout:  
+Original Sprint 3 layout:
 https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1
+
+```
+
+```

@@ -3,7 +3,7 @@ Around The U.S. – Interactive Photo Gallery
 A responsive, interactive gallery where users can edit profile information, add new places as cards, like or delete cards, and view full-size image previews.
 This project demonstrates modular JavaScript, object-oriented programming, and real-time form validation using reusable classes.
 
---
+---
 
 🚀 Features
 🖼️ Card Functionality
@@ -62,7 +62,7 @@ Manages validation for all forms
 
 Keeps code DRY and modular
 
---
+---
 
 🛠️ Technologies Used
 
@@ -88,7 +88,7 @@ Git / GitHub Pages
 
 Normalize.css
 
---
+---
 
 📁 Project Structure
 se_project_aroundtheus/
@@ -110,13 +110,13 @@ se_project_aroundtheus/
 ├── .prettierignore
 └── README.md
 
---
+---
 
 🌐 Live Demo (GitHub Pages)
 
 https://mykeram.github.io/se_project_aroundtheus/
 
---
+---
 
 🎥 Project Video (Optional)
 
@@ -129,4 +129,4 @@ https://drive.google.com/file/d/1gw28P6PjBcZf5-zdGcl0D_wNzC6D21xg/view?usp=shari
 Original Sprint 3 layout:
 https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1
 
---
+---

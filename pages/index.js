@@ -123,9 +123,14 @@ function createCard(cardData) {
   return card.generateCard();
 }
 
+function renderCard(cardData, method = "prepend") {
+  const cardElement = createCard(cardData);
+  cardListEl[method](cardElement);
+}
+
 /* -------------------- Render Initial Cards -------------------- */
 initialCards.forEach((cardData) => {
-  cardListEl.append(createCard(cardData));
+  renderCard(cardData, "append");
 });
 
 /* -------------------- Form Validators -------------------- */
@@ -153,12 +158,14 @@ profileEditForm.addEventListener("submit", (e) => {
 addCardFormElement.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const cardElement = createCard({
-    name: cardTitleInput.value,
-    link: cardUrlInput.value,
-  });
+  renderCard(
+    {
+      name: cardTitleInput.value,
+      link: cardUrlInput.value,
+    },
+    "prepend"
+  );
 
-  cardListEl.prepend(cardElement);
   addCardFormElement.reset();
   addCardFormValidator.disableSubmitButton();
   closeModal(addCardModal);

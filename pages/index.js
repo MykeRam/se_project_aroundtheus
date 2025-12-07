@@ -134,24 +134,28 @@ initialCards.forEach((cardData) => {
 });
 
 /* -------------------- Form Validators -------------------- */
-const profileFormValidator = new FormValidator(
-  validationConfig,
-  profileEditForm
-);
-const addCardFormValidator = new FormValidator(
-  validationConfig,
-  addCardFormElement
-);
+const formValidators = {};
 
-profileFormValidator.enableValidation();
-addCardFormValidator.enableValidation();
+function enableValidation(config) {
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
+
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(config, formElement);
+    const formName = formElement.getAttribute("name"); // "profile-form", "card-form"
+
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
+}
+
+enableValidation(validationConfig);
 
 /* -------------------- Form Submit Handlers -------------------- */
 profileEditForm.addEventListener("submit", (e) => {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  profileFormValidator.disableSubmitButton();
+  formValidators["profile-form"].disableSubmitButton();
   closeModal(profileEditModal);
 });
 
@@ -167,7 +171,7 @@ addCardFormElement.addEventListener("submit", (e) => {
   );
 
   addCardFormElement.reset();
-  addCardFormValidator.disableSubmitButton();
+  formValidators["card-form"].disableSubmitButton();
   closeModal(addCardModal);
 });
 
@@ -177,13 +181,13 @@ profileEditBtn.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
 
-  profileFormValidator.resetValidation();
+  formValidators["profile-form"].resetValidation();
   openModal(profileEditModal);
 });
 
 addNewCardButton.addEventListener("click", () => {
   addCardFormElement.reset();
-  addCardFormValidator.resetValidation();
+  formValidators["card-form"].resetValidation();
   openModal(addCardModal);
 });
 

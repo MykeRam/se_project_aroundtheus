@@ -60,12 +60,13 @@ cardSection.renderItems();
 /* -------------------- Popups With Forms -------------------- */
 const profilePopup = new PopupWithForm("#profile-edit-modal", (inputValues) => {
   userInfo.setUserInfo({
-    name: inputValues.name,
-    job: inputValues.description,
+    name: inputValues.title,       
+    job: inputValues.description,    
   });
 
   formValidators["profile-form"].disableSubmitButton();
 });
+
 profilePopup.setEventListeners();
 
 const addCardPopup = new PopupWithForm("#add-card-modal", (inputValues) => {

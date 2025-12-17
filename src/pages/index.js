@@ -3,7 +3,7 @@ import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
-import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithForms from "../components/PopupWithForms.js";
 import UserInfo from "../components/UserInfo.js";
 
 import { initialCards, validationConfig } from "../utils/constants.js";
@@ -58,7 +58,7 @@ const cardSection = new Section(
 cardSection.renderItems();
 
 /* -------------------- Popups With Forms -------------------- */
-const profilePopup = new PopupWithForm("#profile-edit-modal", (inputValues) => {
+const profilePopup = new PopupWithForms("#profile-edit-modal", (inputValues) => {
   userInfo.setUserInfo({
     name: inputValues.title,       
     job: inputValues.description,    
@@ -69,7 +69,7 @@ const profilePopup = new PopupWithForm("#profile-edit-modal", (inputValues) => {
 
 profilePopup.setEventListeners();
 
-const addCardPopup = new PopupWithForm("#add-card-modal", (inputValues) => {
+const addCardPopup = new PopupWithForms("#add-card-modal", (inputValues) => {
   const cardElement = createCard({
     name: inputValues.title,
     link: inputValues.url,

@@ -1,0 +1,20 @@
+{
+  "name": "se_project_aroundtheus",
+  "version": "1.0.0",
+  "description": "A responsive, interactive gallery where users can edit profile information, add new places as cards, like or delete cards, and view full-size image previews.   This project demonstrates modular JavaScript, object-oriented programming, and real-time form validation using reusable classes.",
+  "homepage": "https://github.com/MykeRam/se_project_aroundtheus#readme",
+  "bugs": {
+    "url": "https://github.com/MykeRam/se_project_aroundtheus/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MykeRam/se_project_aroundtheus.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

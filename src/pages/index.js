@@ -12,7 +12,7 @@ import Api from "../components/Api.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "2c4a817-f1b5-4b76-9c1b-aeec907bc5b2",
+    authorization: "a3eb5cba-124c-47ee-af00-efa63d1e94e7",
     "Content-Type": "application/json",
   },
 });
@@ -66,6 +66,9 @@ const cardSection = new Section(
 
 api.getAppInfo()
   .then(([userData, cards]) => {
+    console.log("USER DATA:", userData);
+    console.log("CARDS DATA:", cards);
+
     userInfo.setUserInfo({
       name: userData.name,
       job: userData.about,
@@ -75,35 +78,77 @@ api.getAppInfo()
 
     cardSection.renderItems(cards);
   })
-  .catch((err) => console.error(err));
+  .catch((err) => console.error("APP INFO ERROR:", err));
 
 
 /* -------------------- Popups With Forms -------------------- */
 const profilePopup = new PopupWithForms("#profile-edit-modal", (inputValues) => {
-  userInfo.setUserInfo({
-    name: inputValues.title,       
-    job: inputValues.description,    
-  });
+  profilePopup.renderLoading(true);
 
-  formValidators["profile-form"].disableSubmitButton();
+  api.updateUserInfo({
+    name: inputValues.title,
+    about: inputValues.description,
+  })
+    .then((userData) => {
+      userInfo.setUserInfo({
+        name: userData.name,
+        job: userData.about,
+      });
+      profilePopup.close();
+      formValidators["profile-form"].disableSubmitButton();
+    })
+    .catch((err) => console.error("Profile update error:", err))
+    .finally(() => {
+      profilePopup.renderLoading(false);
+    });
 });
 
 profilePopup.setEventListeners();
 
 const addCardPopup = new PopupWithForms("#add-card-modal", (inputValues) => {
-  const cardElement = createCard({
+  addCardPopup.renderLoading(true);
+
+  api.addCard({
     name: inputValues.title,
     link: inputValues.url,
-  });
-
-  cardSection.addItem(cardElement);
-  formValidators["card-form"].disableSubmitButton();
+  })
+    .then((cardData) => {
+      const cardElement = createCard(cardData);
+      cardSection.addItem(cardElement);
+      addCardPopup.close();
+      formValidators["card-form"].disableSubmitButton();
+    })
+    .catch((err) => console.error("Add card error:", err))
+    .finally(() => addCardPopup.renderLoading(false));
 });
+
 addCardPopup.setEventListeners();
+
+const avatarPopup = new PopupWithForms("#avatar-edit-modal", (inputValues) => {
+  avatarPopup.renderLoading(true);
+
+  api.updateAvatar({ avatar: inputValues.avatar })
+    .then((userData) => {
+      userInfo.setUserAvatar(userData.avatar);
+      avatarPopup.close();
+      formValidators["avatar-form"].disableSubmitButton();
+    })
+    .catch((err) => console.error("Avatar update error:", err))
+    .finally(() => avatarPopup.renderLoading(false));
+});
+
+avatarPopup.setEventListeners();
 
 /* -------------------- Buttons -------------------- */
 const profileEditBtn = document.querySelector("#profile-edit-button");
 const addNewCardButton = document.querySelector(".profile__add-button");
+
+const avatarImage = document.querySelector(".profile__image");
+
+avatarImage.addEventListener("click", () => {
+  formValidators["avatar-form"].resetValidation();
+  avatarPopup.open();
+});
 
 profileEditBtn.addEventListener("click", () => {
   const currentUser = userInfo.getUserInfo();

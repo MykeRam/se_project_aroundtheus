@@ -816,6 +816,39 @@
   background-position: center;
 }
 
+.profile__avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile__avatar-edit {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background:
+    rgba(0, 0, 0, 0.6)
+    url(a086f758840ae814ecde.svg)
+    center / 26px 26px
+    no-repeat;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.profile__avatar:hover .profile__avatar-edit {
+  opacity: 1;
+}
+
 @media screen and (max-width: 770px) {
   .profile__title {
     font-size: 22px;
@@ -1114,6 +1147,10 @@
   display: block;
   transition: opacity 0.3s;
   max-width: 330px;
+}
+
+.modal__error_visible {
+  opacity: 1;
 }
 
 /* Input error state */

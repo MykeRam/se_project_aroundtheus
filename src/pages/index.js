@@ -7,7 +7,7 @@ import PopupWithForms from "../components/PopupWithForms.js";
 import UserInfo from "../components/UserInfo.js";
 import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 
-import { validationConfig } from "../utils/constants.js";
+import { validationConfig } from "../utils/utils.js";
 import Api from "../components/Api.js";
 
 const api = new Api({

@@ -1,5 +1,12 @@
+// src/components/Card.js
 export default class Card {
-  constructor(data, templateSelector, handleImageClick, handleLikeClick, handleDeleteClick) {
+  constructor(
+    data,
+    templateSelector,
+    handleImageClick,
+    handleLikeClick,
+    handleDeleteClick
+  ) {
     this._name = data.name;
     this._link = data.link;
     this._id = data._id;
@@ -38,20 +45,20 @@ export default class Card {
   }
 
   _renderLikeState() {
-    this._likeButton.classList.toggle("card__like-button_active", this._isLiked);
+    this._likeButton.classList.toggle(
+      "card__like-button_active",
+      this._isLiked
+    );
   }
 
-  _removeCard() {
+  removeCard() {
     this._element.remove();
     this._element = null;
   }
 
-  removeCard() {
-  this._removeCard();
-}
-
   generateCard() {
     this._element = this._getTemplate();
+
     this._cardImage = this._element.querySelector(".card__image");
     this._likeButton = this._element.querySelector(".card__like-button");
     this._deleteButton = this._element.querySelector(".card__delete-button");

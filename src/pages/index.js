@@ -90,16 +90,12 @@ const cardSection = new Section(
 
 api.getAppInfo()
   .then(([userData, cards]) => {
-    console.log("USER DATA:", userData);
-    console.log("CARDS DATA:", cards);
-
     userInfo.setUserInfo({
       name: userData.name,
       job: userData.about,
     });
 
     userInfo.setUserAvatar(userData.avatar);
-
     cardSection.renderItems(cards);
   })
   .catch((err) => console.error("APP INFO ERROR:", err));
@@ -166,10 +162,9 @@ avatarPopup.setEventListeners();
 /* -------------------- Buttons -------------------- */
 const profileEditBtn = document.querySelector("#profile-edit-button");
 const addNewCardButton = document.querySelector(".profile__add-button");
+const avatarEditButton = document.querySelector(".profile__avatar-edit");
 
-const avatarImage = document.querySelector(".profile__image");
-
-avatarImage.addEventListener("click", () => {
+avatarEditButton.addEventListener("click", () => {
   formValidators["avatar-form"].resetValidation();
   avatarPopup.open();
 });

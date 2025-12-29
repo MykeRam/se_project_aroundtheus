@@ -5,6 +5,7 @@ import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForms from "../components/PopupWithForms.js";
 import UserInfo from "../components/UserInfo.js";
+import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 
 import { validationConfig } from "../utils/constants.js";
 import Api from "../components/Api.js";
@@ -49,8 +50,31 @@ function handleCardClick(link, name) {
   imagePopup.open({ name, link });
 }
 
+const deleteConfirmPopup = new PopupWithConfirmation("#delete-confirm-modal");
+deleteConfirmPopup.setEventListeners();
+
 function createCard(cardData) {
-  const card = new Card(cardData, "#card-template", handleCardClick);
+  const card = new Card(
+    cardData,
+    "#card-template",
+    handleCardClick,
+    (cardId, isLiked) => {
+      return isLiked ? api.dislikeCard(cardId) : api.likeCard(cardId);
+    },
+    (cardId) => {
+      deleteConfirmPopup.open();
+
+      deleteConfirmPopup.setSubmitAction(() => {
+        api.deleteCard(cardId)
+          .then(() => {
+            card.removeCard();
+            deleteConfirmPopup.close();
+          })
+          .catch((err) => console.error("Delete error:", err));
+      });
+    }
+  );
+
   return card.generateCard();
 }
 

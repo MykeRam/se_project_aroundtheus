@@ -1,29 +1,35 @@
 export default class Card {
-  constructor(data, templateSelector, handleImageClick) {
+  constructor(data, templateSelector, handleImageClick, handleLikeClick, handleDeleteClick) {
     this._name = data.name;
     this._link = data.link;
+    this._id = data._id;
+    this._isLiked = data.isLiked;
+
     this._templateSelector = templateSelector;
     this._handleImageClick = handleImageClick;
+    this._handleLikeClick = handleLikeClick;
+    this._handleDeleteClick = handleDeleteClick;
   }
 
-  // private: get template
   _getTemplate() {
-    const cardElement = document
+    return document
       .querySelector(this._templateSelector)
       .content.querySelector(".card")
       .cloneNode(true);
-
-    return cardElement;
   }
 
-  // private: set event listeners
   _setEventListeners() {
     this._likeButton.addEventListener("click", () => {
-      this._handleLikeIcon();
+      this._handleLikeClick(this._id, this._isLiked)
+        .then((updatedCard) => {
+          this._isLiked = updatedCard.isLiked;
+          this._renderLikeState();
+        })
+        .catch((err) => console.error("Like error:", err));
     });
 
     this._deleteButton.addEventListener("click", () => {
-      this._handleDeleteCard();
+      this._handleDeleteClick(this._id);
     });
 
     this._cardImage.addEventListener("click", () => {
@@ -31,18 +37,19 @@ export default class Card {
     });
   }
 
-  // private: handle like button
-  _handleLikeIcon() {
-    this._likeButton.classList.toggle("card__like-button_active");
+  _renderLikeState() {
+    this._likeButton.classList.toggle("card__like-button_active", this._isLiked);
   }
 
-  // private: delete card
-  _handleDeleteCard() {
+  _removeCard() {
     this._element.remove();
     this._element = null;
   }
 
-  // public: main method to generate card
+  removeCard() {
+  this._removeCard();
+}
+
   generateCard() {
     this._element = this._getTemplate();
     this._cardImage = this._element.querySelector(".card__image");
@@ -53,6 +60,7 @@ export default class Card {
     this._cardImage.alt = this._name;
     this._element.querySelector(".card__title").textContent = this._name;
 
+    this._renderLikeState();
     this._setEventListeners();
 
     return this._element;

@@ -18,6 +18,8 @@ const api = new Api({
   },
 });
 
+let currentUserId;
+
 /* -------------------- Validators -------------------- */
 const formValidators = {};
 
@@ -72,7 +74,8 @@ function createCard(cardData) {
           })
           .catch((err) => console.error("Delete error:", err));
       });
-    }
+    },
+    currentUserId
   );
 
   return card.generateCard();
@@ -90,6 +93,8 @@ const cardSection = new Section(
 
 api.getAppInfo()
   .then(([userData, cards]) => {
+    currentUserId = userData._id;
+
     userInfo.setUserInfo({
       name: userData.name,
       job: userData.about,

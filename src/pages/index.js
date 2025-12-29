@@ -12,7 +12,7 @@ import Api from "../components/Api.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "PASTE_YOUR_TOKEN_HERE",
+    authorization: "2c4a817-f1b5-4b76-9c1b-aeec907bc5b2",
     "Content-Type": "application/json",
   },
 });
@@ -63,6 +63,19 @@ const cardSection = new Section(
   },
   ".cards__list"
 );
+
+api.getAppInfo()
+  .then(([userData, cards]) => {
+    userInfo.setUserInfo({
+      name: userData.name,
+      job: userData.about,
+    });
+
+    userInfo.setUserAvatar(userData.avatar);
+
+    cardSection.renderItems(cards);
+  })
+  .catch((err) => console.error(err));
 
 
 /* -------------------- Popups With Forms -------------------- */

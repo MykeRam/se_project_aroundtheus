@@ -6,7 +6,16 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForms from "../components/PopupWithForms.js";
 import UserInfo from "../components/UserInfo.js";
 
-import { initialCards, validationConfig } from "../utils/constants.js";
+import { validationConfig } from "../utils/constants.js";
+import Api from "../components/Api.js";
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "PASTE_YOUR_TOKEN_HERE",
+    "Content-Type": "application/json",
+  },
+});
 
 /* -------------------- Validators -------------------- */
 const formValidators = {};
@@ -28,6 +37,7 @@ enableValidation(validationConfig);
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
+  avatarSelector: ".profile__image",
 });
 
 /* -------------------- Image Preview Popup -------------------- */
@@ -46,7 +56,6 @@ function createCard(cardData) {
 
 const cardSection = new Section(
   {
-    items: initialCards,
     renderer: (cardData) => {
       const cardElement = createCard(cardData);
       cardSection.addItem(cardElement);
@@ -55,7 +64,6 @@ const cardSection = new Section(
   ".cards__list"
 );
 
-cardSection.renderItems();
 
 /* -------------------- Popups With Forms -------------------- */
 const profilePopup = new PopupWithForms("#profile-edit-modal", (inputValues) => {

@@ -137,6 +137,10 @@
   max-width: 330px;
 }
 
+.modal__error_visible {
+  opacity: 1;
+}
+
 /* Input error state */
 .modal__input_type_error {
   border-bottom: 2px solid #ff0000; /* red underline */

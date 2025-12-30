@@ -11,7 +11,7 @@ export default class Card {
     this._name = data.name;
     this._link = data.link;
     this._id = data._id;
-    this._isLiked = data.likes?.some((like) => (like._id || like) === currentUserId);
+    this._isLiked = data.isLiked; 
     this._ownerId = data.owner?._id || data.owner;
     this._userId = currentUserId;
 
@@ -32,9 +32,7 @@ export default class Card {
     this._likeButton.addEventListener("click", () => {
       this._handleLikeClick(this._id, this._isLiked)
         .then((updatedCard) => {
-          this._isLiked = updatedCard.likes?.some(
-  (like) => (like._id || like) === this._userId
-);
+          this._isLiked = updatedCard.isLiked;
           this._renderLikeState();
         })
         .catch((err) => console.error("Like error:", err));
